@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacman</title>
+</head>
+<body>
+
+    <h2>Canvas vježba 1</h2>
+    <canvas id="myCanvas" width="400" height="400" style="border: 2px solid black; background-color: black;"></canvas>
+    <script>
+
+        let c = document.getElementById("myCanvas");
+        let ctx = c.getContext("2d");
+        
+        ctx.beginPath();
+        ctx.arc(200, 200, 150, 0, 2 * Math.PI);
+        ctx.fillStyle = "yellow";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(200, 110, 17, 0, 2 * Math.PI);
+        ctx.fillStyle = "black";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(205, 110, 7, 0, 2 * Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+
+
+        ctx.beginPath();
+        ctx.moveTo(200, 200);
+        ctx.lineTo(400, 50);
+        ctx.lineTo(400, 400);
+        ctx.lineTo(200, 200);
+        ctx.fillStyle = "black";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(300, 200, 15, 0, 2 * Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(360, 200, 15, 0, 2 * Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
