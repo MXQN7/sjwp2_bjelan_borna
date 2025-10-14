@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skriptni jezici</title>
+
+   <style>
+
+    html {
+      font-family: system-ui, -apple-system, Roboto, "Segoe UI", "Helvetica Neue", Arial;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #C2F8F6;
+      color: #333;
+      line-height: 1.45;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    nav button {
+      padding: 8px 14px;
+      border-radius: 3px;
+      background: #C2F8F6;
+      cursor: pointer;
+      width: 50%;
+    }
+
+    h1 {
+
+      font-size: 2.3em;
+      font-weight: bold;
+      margin: 0 0 12px 0;
+    }
+
+    h2 { margin-top: 20px; }
+    h3 { margin-top: 20px; }
+
+    .uvod {
+      margin: 7px;
+      color: rgb(86, 86, 86);
+      background: rgba(255, 255, 255, 0.6);
+      padding: 12px;
+    }
+
+    .glavna-slika {
+      width: 480px;
+      height: 220px;
+      margin: 12px;
+    }
+
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    th, td {
+      border: 1px solid #bbb;
+      padding: 8px;
+      text-align: left;
+    }
+
+    form.kontakt {
+      max-width: 600px;
+      margin-top: 25px;
+    }
+
+    form.kontakt input[type="text"],
+    form.kontakt input[type="email"],
+    form.kontakt textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 4px;
+      border: 1px solid #999;
+      font-size: 1rem;
+    }
+
+    form.kontakt button {
+      width: 50%;
+      padding: 12px;
+      border-radius: 3px;
+      border: 0;
+      font-weight: 700;
+      cursor: pointer;
+      background: #C2F8F6;
+    }
+
+    .glavna-slika{
+        height: 220;
+        width: 480;
+    }
+
+  </style>
+
+ 
+</head>
+<body>
+
+    <nav>
+        <button>Početna</button>
+        <button>O nama</button>
+        <button>Kontakt</button>
+    </nav>
+
+  <h1>HTML, CSS, Canvas i SVG</h1>
+
+  <div class="uvod">
+    <p>Canvas je HTML5 element koji pomoću JavaScripta omogućava dinamičko crtanje različitih oblika, dodavanje slika i izradu animacija na web stranici.</p>
+
+    <p>Na platnu ne koristimo novi jezik (kao kod SVG-a) ni Flash. Najčešće primjene platna su:</p>
+    <ul>
+      <li>crtanje grafova,</li>
+      <li>animacije i igre,</li>
+      <li>kompozicija slika.</li>
+    </ul>
+
+    <hr>
+
+    <p>SVG (Scalable Vector Graphics) ne gubi kvalitetu pri zumiranju ili promjeni veličine. SVG crteži mogu biti interaktivni i dinamični. Svaki element i atribut može biti animiran — ručno ili pomoću skripti. SVG koristi i druge W3C standarde, poput DOM-a i XSL-a.</p>
+
+    <hr>
+
+    <h3>Usporedba SVG-a i Canvasa</h3>
+
+    <table>
+      <tr>
+        <th>SVG</th>
+        <th>HTML Canvas</th>
+      </tr>
+      <tr>
+        <td>SVG ima bolju skalabilnost i kvalitetu slike pri većim rezolucijama</td>
+        <td>Canvas ima lošiju skalabilnost i nije pogodan za visoke rezolucije</td>
+      </tr>
+      <tr>
+        <td>SVG ima bolje performanse s manjim brojem objekata i većom površinom</td>
+        <td>Canvas ima bolje performanse s više objekata i manjim površinama</td>
+      </tr>
+      <tr>
+        <td>SVG se može mijenjati pomoću CSS-a i skripti</td>
+        <td>Canvas se može mijenjati samo pomoću skripti</td>
+      </tr>
+      <tr>
+        <td>SVG je vektorski i sastoji se od oblika</td>
+        <td>Canvas je baziran na pikselima</td>
+      </tr>
+    </table>
+  </div>
+
+   <img class="glavna-slika" src="image.png" alt="Primjer slike">
+
+   <br>
+
+    <h2>Primjer SVG-a i Canvasa</h2>
+
+    <svg height="400" width="500">
+    <rect fill="lightblue" height="400" width="400"></rect>
+    <rect fill="darkblue" height="150" width="400" x="0" y="250"></rect>
+    <polygon points="145,100 70,200 220,200" fill="white"></polygon>
+    <polygon points="135,65 135,95 110,80" fill="green"></polygon>
+    <rect fill="black" height="175" width="13" x="138" y="50"></rect>
+    <rect fill="brown" height="50" width="210" x="45" y="215"></rect>
+    <circle cx="320" cy="70" r="40" fill="yellow" />
+    </svg>
+
+    <canvas id="canvas" width="400" height="400" style="border:1px solid #ccc; margin-top:20px;"></canvas>
+    <script>
+
+      const c = document.getElementById('canvas');
+      const ctx = c.getContext('2d');
+
+      ctx.fillStyle = 'lightblue';
+      ctx.fillRect(0, 0, 400, 400);
+
+      ctx.fillStyle = 'darkblue';
+      ctx.fillRect(0, 250, 400, 150);
+
+      ctx.beginPath();
+      ctx.moveTo(145, 100);
+      ctx.lineTo(70, 200);
+      ctx.lineTo(220, 200);
+      ctx.closePath();
+      ctx.fillStyle = 'white';
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(135, 65);
+      ctx.lineTo(135, 95);
+      ctx.lineTo(110, 80);
+      ctx.closePath();
+      ctx.fillStyle = 'green';
+      ctx.fill();
+
+      ctx.fillStyle = 'black';
+      ctx.fillRect(138, 50, 13, 175);
+
+      ctx.fillStyle = 'brown';
+      ctx.fillRect(45, 215, 210, 50);
+
+      ctx.beginPath();
+      ctx.arc(320, 70, 40, 0, 2 * Math.PI);
+      ctx.fillStyle = 'yellow';
+      ctx.fill();
+    </script>
+
+    <form class="kontakt">
+
+    <h3>Kontakt forma</h3>
+    <label for="ime">Ime</label>
+    <input id="ime" name="ime" type="text">
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email">
+
+    <label for="poruka">Poruka</label>
+    <textarea id="poruka" name="poruka" rows="6"></textarea>
+
+    <button type="submit">Pošalji</button>
+
+    </form>
+
+
+
+
+</body>
+</html>
+
+</html>
