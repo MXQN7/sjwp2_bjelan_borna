@@ -1,1 +1,1 @@
-alert("Radi JS");
+document.getElementsByClassName("list")[1].style.fontSize = "24px";

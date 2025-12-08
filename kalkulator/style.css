@@ -1,0 +1,50 @@
+body{
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #cfcfcf;
+}
+
+.okvir{
+    width: 300px;
+    background: #fff;
+    padding: 20px;
+    margin: auto;
+    border: 2px solid black; 
+}
+
+label{
+    display: block;
+    margin-top: 10px;
+}
+
+input{
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.gumbi{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    width: 60px;
+    height: 35px;
+    font-size: 18px;
+}
+
+h2{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.rezultat{
+    margin-top: 10px;
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    background: #fff;
+}
