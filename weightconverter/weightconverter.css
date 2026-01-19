@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.okvir {
+    padding: 10px;
+    margin: 5px 0;
+    color: white;
+    font-weight: bold;
+}
+
+.pounds {
+    background-color: #3498db;
+}
+
+.ounces {
+    background-color: #2ecc71;
+}
+
+.grams {
+    background-color: #e74c3c;
+}
