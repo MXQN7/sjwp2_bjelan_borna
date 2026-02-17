@@ -8,7 +8,7 @@ writeFile('message.txt', data, (err) => {
 });*/
 
 
-readFile('/D:sjwp2_bjelan_borna/node/message.txt', 'utf8', (err, data) => {
+readFile('D:/sjwp2_bjelan_borna/node/message.txt', 'utf8', (err, data) => {
   if (err) throw err;
   console.log(data);
 });
