@@ -1,0 +1,7 @@
+import names from 'starwars-names';
+import randomColor from 'randomcolor';
+
+var randomName = names.random();
+var color = randomColor();
+
+console.log(`Moje ime je ${randomName}, a najdraža boja mi je ${color}`);
