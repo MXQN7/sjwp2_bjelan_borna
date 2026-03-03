@@ -5,26 +5,28 @@
 */
 
 import inquirer from 'inquirer';
-import qr from 'qr-image';
 import fs from 'fs';
 
 inquirer
   .prompt([
     {
-      message: 'Unesi URL:',
-      name: 'URL',
+      type: 'input',
+      message: 'Unesi ime učenika:',
+      name: 'ime',
     },
+    {
+      type: 'number',
+      name: 'ocjena',
+      message: 'Unesite ocjenu:',
+    }
     ])
 
   .then((answers) => {
-    const url = answers.URL;
-    var qr_png = qr.image(url);
-    qr_png.pipe(fs.createWriteStream('qr_image.png'));
+    const tekst = `Ime učenika: ${answers.ime}, ocjena: ${answers.ocjena}\n`;
 
-    fs.writeFile("URL.txt", url, (err) => {
-        if (err) throw err;
-      console.log("Datoteka je sacuvana");
-    })
+    fs.appendFileSync('ucenici.txt', tekst);
+    console.log("Podatci su spremljeni u datoteku");
+
   })
 
   .catch((error) => {
