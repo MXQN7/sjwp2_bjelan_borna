@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #090e1d, #807272);
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    font-size: 38px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: naslovPojava 0.8s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    animation: goreDolje 0.8s ease;
+}
+
+.nav-btn {
+    padding: 11px 20px;
+    border: none;
+    border-radius: 12px;
+    background: #2b2b2b;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: #3a3a3a;
+    transform: translateY(-2px);
+}
+
+.nav-btn.active {
+    background: linear-gradient(135deg, #c4201a, #8a141b);
+    box-shadow: 0 8px 18px rgba(229, 9, 20, 0.35);
+}
+
+.gallery {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: #8a141b;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 5);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    opacity: 0;
+    transform: translateY(25px);
+    animation: karticaPojava 0.6s ease forwards;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.35);
+}
+
+.card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.card:hover img {
+    transform: scale(1.04);
+}
+
+.card h3 {
+    margin: 0;
+    padding: 14px 12px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: normal;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(6px);
+}
+
+.modal-content {
+    background: #202020;
+    width: 100%;
+    max-width: 420px;
+    margin: 60px auto;
+    padding: 24px;
+    text-align: center;
+    border-radius: 18px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    animation: modalPojava 0.35s ease;
+}
+
+.modal-content img {
+    width: 210px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 28px;
+}
+
+.modal-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #dddddd;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    transition: 0.25s ease;
+}
+
+.close:hover {
+    color: #ff4d4d;
+    transform: scale(1.1);
+}
+
+
+@keyframes karticaPojava {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes modalPojava {
+    from {
+        opacity: 0;
+        transform: translateY(-15px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes naslovPojava {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes goreDolje {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
